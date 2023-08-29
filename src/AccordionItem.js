@@ -6,7 +6,7 @@ export default function AccordionItem({ faqsobj, num, curOpen, setCurOpen }) {
 
   function handleToggle() {
     //setIsOpen((isOpen) => !isOpen);
-    setCurOpen(num);
+    setCurOpen(isOpen ? null : num);
   }
   return (
     <div className={`item ${isOpen ? "open" : ""}`} onClick={handleToggle}>
