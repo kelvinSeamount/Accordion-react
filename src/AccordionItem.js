@@ -1,10 +1,12 @@
-import { useState } from "react";
+//Summary STATE LIFTED UP TO CLOSEST PARENT
 
-export default function AccordionItem({ faqsobj, num }) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function AccordionItem({ faqsobj, num, curOpen, setCurOpen }) {
+  const isOpen = num === curOpen;
+  //State is removed (items no longer controls if open or not)
 
   function handleToggle() {
-    setIsOpen((isOpen) => !isOpen);
+    //setIsOpen((isOpen) => !isOpen);
+    setCurOpen(num);
   }
   return (
     <div className={`item ${isOpen ? "open" : ""}`} onClick={handleToggle}>
